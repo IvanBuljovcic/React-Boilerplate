@@ -6,6 +6,12 @@ module.exports = () => ({
 		filename: '[name].[chunkhash].js'
 	},
 
+	optimization: {
+		splitChunks: {
+			chunks: 'all'
+		}
+	},
+
 	module: {
 		rules: [
 			{

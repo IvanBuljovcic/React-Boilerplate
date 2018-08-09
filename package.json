@@ -13,11 +13,15 @@
   "description": "Boilerplate for starting new projects in React",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.56",
+    "@babel/node": "^7.0.0-beta.56",
     "@babel/preset-env": "^7.0.0-beta.56",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-jsx-display-if": "^3.0.0",
+    "browser-sync": "^2.24.6",
+    "chalk": "^2.4.1",
     "compression-webpack-plugin": "^1.1.11",
+    "connect-history-api-fallback": "^1.5.0",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
@@ -29,11 +33,12 @@
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "webpack-serve": "^2.0.2"
   },
   "engines": {
-    "node": ">=10.8.0",
-    "npm": ">=6.3.0"
+    "node": ">=10.7.0",
+    "npm": ">=6.2.0"
   },
   "license": "MIT",
   "main": "index.js",
@@ -48,9 +53,11 @@
     "dev": "$npm_execpath run webpack -- --env.mode development",
     "dev:server": "$npm_execpath run webpack:server -- --env.mode development --hot",
     "dev:watch": "$npm_execpath run dev -- --watch",
+    "open:dist": "babel-node build-utils/distServer.js",
     "prod": "$npm_execpath run webpack -- --env.mode production",
     "prod:analyze": "$npm_execpath run prod -- --env.presets analyze",
     "prod:compress": "$npm_execpath run prod -- --env.presets compress",
+    "prod:server": "$npm_execpath run prod && $npm_execpath run open:dist",
     "webpack": "webpack",
     "webpack:server": "webpack-dev-server"
   },
