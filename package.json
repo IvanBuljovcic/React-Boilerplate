@@ -1,65 +1,82 @@
 {
-  "author": "Andrija Vujovic <andrija.vujovic@roundglobe.tech>",
-  "contributors": [
-    {
-      "email": "ivan.buljovcic@roundglobe.tech",
-      "name": "Ivan Buljovcic"
+    "author": "Andrija Vujovic <andrija.vujovic@roundglobe.tech>",
+    "contributors": [{
+            "email": "ivan.buljovcic@roundglobe.tech",
+            "name": "Ivan Buljovcic"
+        },
+        {
+            "email": "stefan.karan@roundglobe.tech",
+            "name": "Stefan Karan"
+        }
+    ],
+    "description": "Boilerplate for starting new projects in React",
+    "devDependencies": {
+        "@babel/core": "^7.0.0-beta.56",
+        "@babel/node": "^7.0.0-beta.56",
+        "@babel/preset-env": "^7.0.0-beta.56",
+        "babel-cli": "^6.26.0",
+        "babel-eslint": "^8.2.6",
+        "babel-loader": "^7.1.5",
+        "babel-plugin-jsx-display-if": "^3.0.0",
+        "browser-sync": "^2.24.6",
+        "chalk": "^2.4.1",
+        "compression-webpack-plugin": "^1.1.11",
+        "connect-history-api-fallback": "^1.5.0",
+        "css-loader": "^1.0.0",
+        "eslint": "^5.3.0",
+        "eslint-config-airbnb": "^17.0.0",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-loader": "^2.1.0",
+        "eslint-plugin-import": "^2.13.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-prettier": "^2.6.2",
+        "eslint-plugin-react": "^7.10.0",
+        "file-loader": "^1.1.11",
+        "html-webpack-plugin": "^3.2.0",
+        "mini-css-extract-plugin": "^0.4.1",
+        "prettier": "^1.14.2",
+        "rimraf": "^2.6.2",
+        "style-loader": "^0.22.1",
+        "url-loader": "^1.0.1",
+        "webpack": "^4.16.5",
+        "webpack-bundle-analyzer": "^2.13.1",
+        "webpack-cli": "^3.1.0",
+        "webpack-dev-server": "^3.1.5",
+        "webpack-merge": "^4.1.4",
+        "webpack-serve": "^2.0.2"
     },
-    {
-      "email": "stefan.karan@roundglobe.tech",
-      "name": "Stefan Karan"
+    "engines": {
+        "node": ">=10.7.0",
+        "npm": ">=6.2.0"
+    },
+    "license": "MIT",
+    "main": "index.js",
+    "name": "react-boilerplate",
+    "repository": "git@gitlab.internal.roundglobe.tech:andrija/react-boilerplate.git",
+    "scripts": {
+        "build": "$npm_execpath run clean && $npm_execpath run prod",
+        "clean": "rimraf ./dist/**/*",
+        "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
+        "debug:dev": "$npm_execpath run debug -- --env.mode development",
+        "debug:prod": "$npm_execpath run debug -- --env.mode production",
+        "dev": "$npm_execpath run webpack -- --env.mode development",
+        "dev:server": "$npm_execpath run webpack:server -- --env.mode development --hot",
+        "dev:watch": "$npm_execpath run dev -- --watch",
+        "open:dist": "babel-node build-utils/distServer.js",
+        "prod": "$npm_execpath run webpack -- --env.mode production",
+        "prod:analyze": "$npm_execpath run prod -- --env.presets analyze",
+        "prod:compress": "$npm_execpath run prod -- --env.presets compress",
+        "prod:server": "$npm_execpath run prod && $npm_execpath run open:dist",
+        "webpack": "webpack",
+        "webpack:server": "webpack-dev-server",
+        "dev:server-lint": "$npm_execpath dev:server -- --env.presets eslint",
+        "eslint": "eslint -c ./.eslintrc.json ./src/**/*.js",
+        "prod:lint": "$npm_execpath prod -- --env.presets eslint",
+        "prettier": "prettier --config ./.prettierrc.yml ./src/**/*.{js,css}",
+        "pretty": "prettier --single-quote --print-width 20 --write ./src/**/*.{js,css}"
+    },
+    "version": "1.0.0",
+    "dependencies": {
+        "react": "^16.4.2"
     }
-  ],
-  "description": "Boilerplate for starting new projects in React",
-  "devDependencies": {
-    "@babel/core": "^7.0.0-beta.56",
-    "@babel/node": "^7.0.0-beta.56",
-    "@babel/preset-env": "^7.0.0-beta.56",
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-jsx-display-if": "^3.0.0",
-    "browser-sync": "^2.24.6",
-    "chalk": "^2.4.1",
-    "compression-webpack-plugin": "^1.1.11",
-    "connect-history-api-fallback": "^1.5.0",
-    "css-loader": "^1.0.0",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.1",
-    "rimraf": "^2.6.2",
-    "style-loader": "^0.22.1",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.16.5",
-    "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5",
-    "webpack-merge": "^4.1.4",
-    "webpack-serve": "^2.0.2"
-  },
-  "engines": {
-    "node": ">=10.7.0",
-    "npm": ">=6.2.0"
-  },
-  "license": "MIT",
-  "main": "index.js",
-  "name": "react-boilerplate",
-  "repository": "git@gitlab.internal.roundglobe.tech:andrija/react-boilerplate.git",
-  "scripts": {
-    "build": "$npm_execpath run clean && $npm_execpath run prod",
-    "clean": "rimraf ./dist/**/*",
-    "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
-    "debug:dev": "$npm_execpath run debug -- --env.mode development",
-    "debug:prod": "$npm_execpath run debug -- --env.mode production",
-    "dev": "$npm_execpath run webpack -- --env.mode development",
-    "dev:server": "$npm_execpath run webpack:server -- --env.mode development --hot",
-    "dev:watch": "$npm_execpath run dev -- --watch",
-    "open:dist": "babel-node build-utils/distServer.js",
-    "prod": "$npm_execpath run webpack -- --env.mode production",
-    "prod:analyze": "$npm_execpath run prod -- --env.presets analyze",
-    "prod:compress": "$npm_execpath run prod -- --env.presets compress",
-    "prod:server": "$npm_execpath run prod && $npm_execpath run open:dist",
-    "webpack": "webpack",
-    "webpack:server": "webpack-dev-server"
-  },
-  "version": "1.0.0"
 }
