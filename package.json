@@ -38,6 +38,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
     "file-loader": "^1.1.11",
+    "git-pre-commit": "^2.1.4",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.1",
     "postcss-discard-comments": "^4.0.0",
@@ -77,6 +78,7 @@
     "dev:lint": "$npm_execpath run dev -- --env.presets eslint",
     "dev:postcss": "$npm_execpath run dev -- --env.presets postcss",
     "dev:server": "$npm_execpath run webpack:server -- --env.mode development --hot --env.presets eslint",
+    "start": "$npm_execpath run dev:server -- --env.presets postcss",
     "dev:watch": "$npm_execpath run dev -- --watch",
     "eslint": "eslint -c ./.eslintrc.json ./src/**/*.js",
     "open:dist": "babel-node build-utils/distServer.js",
@@ -89,8 +91,7 @@
     "prod:lint": "$npm_execpath prod -- --env.presets eslint",
     "prod:server": "$npm_execpath run build && $npm_execpath run open:dist",
     "webpack": "webpack",
-    "webpack:server": "webpack-dev-server",
-    "precommit": "$npm_execpath run prettier && $npm_execpath run eslint"
+    "webpack:server": "webpack-dev-server"
   },
   "version": "1.0.0"
 }
