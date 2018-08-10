@@ -30,7 +30,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 		module: {
 			rules: [
 				{
-					test: /\.(jpg | jpeg | svg | png)$/,
+					test: /\.(jpe?g|svg|png)$/,
 					use: [
 						{
 							loader: 'url-loader',
