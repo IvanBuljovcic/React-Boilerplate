@@ -1,0 +1,8 @@
+/* --- Defaults | Global Styles --- */
+
+* {box-sizing: border-box;}
+
+html {
+  font-size: 10px;
+  font-size: Arial, Tahoma, sans-serif;
+}

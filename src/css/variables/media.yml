@@ -1,0 +1,21 @@
+# Media Queries
+# -------------
+## .element {
+##    @media map(media, phone, default) { ... }
+## }
+## ===
+## .element {
+##    @media only screen and (max-width: 375px) { ... }
+## }
+
+phone:
+  defalut: "only screen and (max-width: 768px)"
+  small: "only screen and (max-width: 480px)"
+
+tablet:
+  default: "only screen and (min-device-width: 768px)"
+  portrait: "only screen and (min-device-width: 768px) and (orientation: portrait)"
+
+desktop:
+  default: "only screen and (max-width: 1024px)"
+  large: "only screen and (min-width: 1260px)"

@@ -1,0 +1,10 @@
+# Dimension variables
+# ---------------
+## .element { width: map(dimensions, base, input-height); }
+## ===
+## .element { width: 6rem; }
+
+## Base
+base:
+  content-width: 120rem
+  inner-width: 80rem
