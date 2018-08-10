@@ -8,6 +8,6 @@ const badFunc = () => {
 };
 
 const funcB = x => x;
-funcB(1)
+funcB(1);
 
 badFunc();

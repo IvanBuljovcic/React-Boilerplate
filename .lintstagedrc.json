@@ -1,0 +1,11 @@
+{
+  "linters": {
+    "*.{js,jsx}": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "ignore": [
+    "dist/**/*"
+  ]
+}

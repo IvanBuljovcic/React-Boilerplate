@@ -38,8 +38,9 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
     "file-loader": "^1.1.11",
-    "git-pre-commit": "^2.1.4",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
     "mini-css-extract-plugin": "^0.4.1",
     "postcss-discard-comments": "^4.0.0",
     "postcss-import": "^12.0.0",
@@ -64,11 +65,14 @@
     "npm": ">=6.2.0"
   },
   "license": "MIT",
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
+  },
   "main": "index.js",
   "name": "react-boilerplate",
   "repository": "git@gitlab.internal.roundglobe.tech:andrija/react-boilerplate.git",
   "scripts": {
-    "build": "$npm_execpath run clean && $npm_execpath run prod",
+    "build": "$npm_execpath run clean && $npm_execpath run prettier:write && $npm_execpath run prod",
     "clean": "rimraf ./dist/**/*",
     "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
     "debug:dev": "$npm_execpath run debug -- --env.mode development",
@@ -78,10 +82,11 @@
     "dev:lint": "$npm_execpath run dev -- --env.presets eslint",
     "dev:postcss": "$npm_execpath run dev -- --env.presets postcss",
     "dev:server": "$npm_execpath run webpack:server -- --env.mode development --hot --env.presets eslint",
-    "start": "$npm_execpath run dev:server -- --env.presets postcss",
     "dev:watch": "$npm_execpath run dev -- --watch",
     "eslint": "eslint -c ./.eslintrc.json ./src/**/*.js",
+    "lint-staged": "lint-staged",
     "open:dist": "babel-node build-utils/distServer.js",
+    "precommit": "lint-staged",
     "prettier": "prettier",
     "prettier:show": "$npm_execpath prettier -- --config ./prettier.config.json \"src/**/*.{js,jsx,ts,css,scss,less}\"",
     "prettier:write": "$npm_execpath prettier -- --config ./prettier.config.json --write \"src/**/*.{js,jsx,ts,css,scss,less}\"",
@@ -90,6 +95,7 @@
     "prod:compress": "$npm_execpath run prod -- --env.presets compress",
     "prod:lint": "$npm_execpath prod -- --env.presets eslint",
     "prod:server": "$npm_execpath run build && $npm_execpath run open:dist",
+    "start": "$npm_execpath run dev:server -- --env.presets postcss",
     "webpack": "webpack",
     "webpack:server": "webpack-dev-server"
   },
