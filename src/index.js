@@ -7,6 +7,6 @@ const badFunc = (x, y, z) => {
   document.body.appendChild(image);
 };
 
-console.log('Hello World')
+console.log('Hello World');
 
 badFunc();
