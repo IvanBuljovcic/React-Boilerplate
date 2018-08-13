@@ -93,7 +93,6 @@
     "prod": "$npm_execpath run webpack -- --env.mode production",
     "prod:analyze": "$npm_execpath run prod -- --env.presets analyze",
     "prod:compress": "$npm_execpath run prod -- --env.presets compress",
-    "prod:lint": "$npm_execpath prod -- --env.presets eslint",
     "prod:server": "$npm_execpath run build && $npm_execpath run open:dist",
     "start": "$npm_execpath run dev:server -- --env.presets postcss",
     "webpack": "webpack",
