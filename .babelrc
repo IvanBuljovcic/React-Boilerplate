@@ -1,0 +1,27 @@
+{
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types"
+      ]
+    }
+  },
+  "presets": [
+    [
+      "env", {
+        "targers": {
+          "browsers": "last 4 versions"
+        },
+        "modules": false
+      }
+    ],
+    "react"
+  ],
+  "plugins": [
+    "transform-react-jsx",
+    "transform-class-properties",
+    "jsx-display-if",
+    "transform-react-constant-elements",
+    "react-hot-loader/babel"
+  ]
+}
