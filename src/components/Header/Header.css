@@ -1,0 +1,7 @@
+.app-header {
+  background: #0AF;
+
+  .active {
+    text-decoration: line-through;
+  }
+}
