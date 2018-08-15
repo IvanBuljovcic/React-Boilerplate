@@ -1,5 +1,5 @@
 import React from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Title = ({ text, isSubtitle }) => {
   if (isSubtitle) {
@@ -18,8 +18,8 @@ const Title = ({ text, isSubtitle }) => {
 };
 
 Title.propTypes = {
-  text: PropType.string,
-  isSubtitle: PropType.bool
+  text: PropTypes.string,
+  isSubtitle: PropTypes.bool
 };
 
 Title.defaultProps = {

@@ -14,7 +14,7 @@
   "presets": [
     [
       "env", {
-        "targers": {
+        "targets": {
           "browsers": "last 4 versions"
         },
         "modules": false

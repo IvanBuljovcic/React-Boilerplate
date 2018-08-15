@@ -1,16 +1,19 @@
 import React from 'react';
-// import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 
-// // - Root Components
-// import Header from './Header/Header';
-// import Routes from './Routing/Routes';
-// import Button from './Common/Button/Button';
+// - Root Components
+import Header from './Header/Header';
+import Routes from './Routing/Routes';
 
 const ClientApp = () => (
-  <div>
-    <h1>Hello World</h1>
-    <h2>Hi again</h2>
-  </div>
+  <BrowserRouter>
+    <React.Fragment>
+      <Header />
+
+      <Routes />
+    </React.Fragment>
+  </BrowserRouter>
 );
 
-export default ClientApp;
+export default hot(module)(ClientApp);
