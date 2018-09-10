@@ -1,21 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 
-// - Root Components
-import Header from './components/Header/Header';
-import Routes from './components/Routing/Routes';
+// - Root Component | HOT Loaded
+import ClientApp from './components/ClientApp';
 
+// - Root element in HTML | Bootstrap to this element
 const ROOT_ELEMENT = document.getElementById('app');
 
-const App = () => (
-  <BrowserRouter>
-    <React.Fragment>
-      <Header />
-
-      <Routes />
-    </React.Fragment>
-  </BrowserRouter>
-);
-
-render(<App />, ROOT_ELEMENT);
+render(<ClientApp />, ROOT_ELEMENT);

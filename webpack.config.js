@@ -23,7 +23,6 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 		entry: path.join(__dirname, 'src', 'index.jsx'),
 		output: {
 			filename: 'bundle.js',
-			chunkFilename: '[name].lazy-chunk.js', // Lazy loaded bundle naming pattern
 			path: path.join(__dirname, 'dist')
 		},
 

@@ -4,12 +4,17 @@
       "plugins": [
         "transform-react-remove-prop-types"
       ]
+    },
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
     }
   },
   "presets": [
     [
       "env", {
-        "targers": {
+        "targets": {
           "browsers": "last 4 versions"
         },
         "modules": false
@@ -22,6 +27,7 @@
     "transform-class-properties",
     "jsx-display-if",
     "transform-react-constant-elements",
-    "react-hot-loader/babel"
+    "syntax-dynamic-import",
+    "react-imported-component/babel"
   ]
 }

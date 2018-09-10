@@ -1,6 +1,10 @@
 const webpack = require('webpack');
 
 module.exports = () => ({
+  devServer: {
+    historyApiFallback: true
+  },
+
 	module: {
 		rules: [
 			{

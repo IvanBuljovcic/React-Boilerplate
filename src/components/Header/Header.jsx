@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// - Styles
 import './Header.css';
 
 const Header = () => (
@@ -15,6 +16,6 @@ const Header = () => (
       Settings
     </NavLink>
   </header>
-);
+)
 
 export default Header;
