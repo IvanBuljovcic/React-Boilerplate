@@ -65,6 +65,7 @@
     "react-hot-loader": "^4.3.4",
     "react-imported-component": "^4.6.2",
     "rimraf": "^2.6.2",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
     "url-loader": "^1.0.1",
     "webpack": "^4.16.5",
