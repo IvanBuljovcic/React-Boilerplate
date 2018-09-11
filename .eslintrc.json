@@ -7,7 +7,8 @@
   },
   "extends": [
     "airbnb",
-    "prettier"
+    "prettier",
+    "plugin:jest/recommended"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -17,12 +18,13 @@
     "ecmaVersion": 7,
     "sourceType": "module"
   },
-  "plugins": [ "prettier", "react" ],
+  "plugins": [ "prettier", "react", "jest" ],
   "rules": {
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "no-var": "off",
+    "jest/lowercase-name": "off",
     "no-underscore-dangle": "off",
     "camelcase": "off",
     "react/prop-types": [

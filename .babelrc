@@ -9,6 +9,9 @@
       "plugins": [
         "react-hot-loader/babel"
       ]
+    },
+    "test": {
+      "presets": [["env"], "react"]
     }
   },
   "presets": [
