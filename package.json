@@ -129,7 +129,6 @@
     "prod:compress": "$npm_execpath run prod -- --env.presets compress",
     "prod:server": "$npm_execpath run build && $npm_execpath run open:dist",
     "prod": "$npm_execpath run webpack -- --env.mode production",
-    "starty": "$npm_execpath run dev:server -- --env.presets postcss && $npm_execpath run storybook",
     "start": "concurrently \"$npm_execpath run dev:server -- --env.presets postcss\" \"$npm_execpath run storybook\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "$npm_execpath run jest",
