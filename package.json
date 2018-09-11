@@ -121,7 +121,7 @@
     "jest": "jest",
     "lint-staged": "lint-staged",
     "open:dist": "babel-node build-utils/distServer.js",
-    "precommit": "lint-staged",
+    "precommit": "lint-staged && $npm_execpath run test",
     "prettier:show": "$npm_execpath prettier -- --config ./prettier.config.json \"src/**/*.{js,jsx,ts,css,scss,less}\"",
     "prettier:write": "$npm_execpath prettier -- --config ./prettier.config.json --write \"src/**/*.{js,jsx,ts,css,scss,less}\"",
     "prettier": "prettier",
