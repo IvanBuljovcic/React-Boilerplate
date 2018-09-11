@@ -20,17 +20,20 @@
   },
   "plugins": [ "prettier", "react", "jest" ],
   "rules": {
+    "camelcase": "off",
+    "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
-    "import/extensions": "off",
-    "no-var": "off",
     "jest/lowercase-name": "off",
     "no-underscore-dangle": "off",
-    "camelcase": "off",
+    "no-var": "off",
     "react/prop-types": [
       2, {
           "ignore": ["children"]
       }
-    ]
+    ],
+    "react/require-extension": "off",
+    "react/wrap-multiline": "off"
+    
   }
 }
