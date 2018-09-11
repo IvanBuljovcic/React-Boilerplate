@@ -95,13 +95,8 @@
   "license": "MIT",
   "lint-staged": {
     "*.{js,jsx}": [
-      "test",
       "eslint",
       "git add"
-    ],
-    "ignore": [
-      "./.storybook",
-      "**/_story.*"
     ]
   },
   "main": "index.js",
