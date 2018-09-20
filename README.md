@@ -11,7 +11,7 @@ A template for new projects with the basic setup and examples.
 
 ## Installation
 
-Download to your project directory, add `README.md`, and commit:
+Download to your project directory:
 
 ```sh
 git clone git@gitlab.internal.roundglobe.tech:andrija/react-boilerplate.git && cd react-boilerplate
