@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 
-module.exports = () => ({
+module.exports = () => ({  
+  devtool: 'cheap-module-source-map',
+  
   devServer: {
     historyApiFallback: true
   },
@@ -9,7 +11,7 @@ module.exports = () => ({
 		rules: [
 			{
 				test: /\.css$/,
-				use: [ 'style-loader', 'css-loader' ]
+				use: [ 'style-loader', 'css-loader', 'resolve-url-loader' ]
 			}
 		]
 	},

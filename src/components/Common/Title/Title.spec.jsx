@@ -1,20 +1,19 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 // - Test component
 import Title from './Title';
 
 describe('<Title /> component renders correctly', () => {
   test('Default', () => {
-    const tree = renderer.create(<Title text="My title" />).toJSON();
+    const wrapper = shallow(<Title text="My Title" />);
 
-    expect(tree).toMatchSnapshot();
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 
   test('Subtitle', () => {
-    const tree = renderer.create(<Title text="My subtitle" isSubtitle />).toJSON();
+    const wrapper = shallow(<Title text="My Subtitle" isSubtitle />);
 
-    expect(tree).toMatchSnapshot();
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 });
-

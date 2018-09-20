@@ -8,6 +8,7 @@
   "extends": [
     "airbnb",
     "prettier",
+    "plugin:react-redux/recommended",
     "plugin:jest/recommended"
   ],
   "parser": "babel-eslint",
@@ -18,7 +19,7 @@
     "ecmaVersion": 7,
     "sourceType": "module"
   },
-  "plugins": [ "prettier", "react", "jest" ],
+  "plugins": [ "prettier", "react", "react-redux",  "jest" ],
   "rules": {
     "camelcase": "off",
     "import/extensions": "off",
@@ -29,11 +30,11 @@
     "no-var": "off",
     "react/prop-types": [
       2, {
-          "ignore": ["children"]
+        "ignore": ["children"]
       }
     ],
-    "react/require-extension": "off",
-    "react/wrap-multiline": "off"
-    
+    "react/require-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-wrap-multilines": 2
   }
 }

@@ -11,8 +11,10 @@
       ]
     },
     "test": {
-      "presets": [["env"], "react"]
-    }
+      "presets": [["env"], "react"],
+      "plugins": ["transform-class-properties"]
+    },
+    "browser": true
   },
   "presets": [
     [
@@ -31,6 +33,7 @@
     "jsx-display-if",
     "transform-react-constant-elements",
     "syntax-dynamic-import",
-    "react-imported-component/babel"
+    "react-imported-component/babel",
+    "transform-object-rest-spread"
   ]
 }

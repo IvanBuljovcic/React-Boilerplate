@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> component renders correctly Default button 1`] = `
+exports[`<Button /> Snapshots Default button 1`] = `
 <button
   className="app-btn"
   type="button"
 >
-  I'm a button
+  Submit
 </button>
 `;
 
-exports[`<Button /> component renders correctly Reset button 1`] = `
+exports[`<Button /> Snapshots Reset button 1`] = `
 <input
   className="app-btn app-btn--cancel"
   type="reset"
@@ -17,7 +17,7 @@ exports[`<Button /> component renders correctly Reset button 1`] = `
 />
 `;
 
-exports[`<Button /> component renders correctly Submit button 1`] = `
+exports[`<Button /> Snapshots Submit button 1`] = `
 <button
   className="app-btn app-btn--submit"
   type="submit"

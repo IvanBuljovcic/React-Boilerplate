@@ -15,7 +15,8 @@
     "react-dom": "^16.4.2",
     "react-loadable": "^5.5.0",
     "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0"
   },
   "description": "Boilerplate for starting new projects in React",
   "devDependencies": {
@@ -35,6 +36,7 @@
     "babel-plugin-jsx-display-if": "^3.0.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.14",
@@ -48,6 +50,7 @@
     "css-loader": "^1.0.0",
     "css-mqpacker": "^7.0.0",
     "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -57,14 +60,18 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-react-redux": "^2.3.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
+    "jsdom": "^12.0.0",
+    "key-mirror": "^1.0.1",
     "lint-staged": "^7.2.0",
     "lodash-es": "^4.17.10",
     "mini-css-extract-plugin": "^0.4.1",
     "postcss-discard-comments": "^4.0.0",
+    "postcss-font-magician": "^2.2.1",
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-map": "^0.9.0",
@@ -74,8 +81,14 @@
     "prop-types": "^15.6.2",
     "react-hot-loader": "^4.3.4",
     "react-imported-component": "^4.6.2",
+    "react-inlinesvg": "^0.8.1",
+    "react-redux-form": "^1.16.10",
+    "react-responsive": "^5.0.0",
     "react-storybook-addon-chapters": "^2.1.7",
     "react-test-renderer": "^16.5.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-thunk": "^2.3.0",
+    "resolve-url-loader": "^2.3.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "storybook-react-router": "^1.0.1",
@@ -93,9 +106,16 @@
   },
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint",
-      "git add"
+    "linters": {
+      "*.{js,jsx}": [
+        "eslint",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "node_modules",
+      "webpack.**",
+      "dist/**"
     ]
   },
   "main": "index.js",
@@ -117,7 +137,7 @@
     "eslint": "eslint -c ./.eslintrc.json \"./src/**/*.{js,jsx}\"",
     "jest:update": "$npm_execpath run jest -- --updateSnapshot",
     "jest:watch": "$npm_execpath run jest -- --watch",
-    "jest": "jest",
+    "jest": "jest --config=jest.config.js",
     "lint-staged": "lint-staged",
     "open:dist": "babel-node build-utils/distServer.js",
     "precommit": "lint-staged && $npm_execpath run test",
@@ -128,9 +148,13 @@
     "prod:compress": "$npm_execpath run prod -- --env.presets compress",
     "prod:server": "$npm_execpath run build && $npm_execpath run open:dist",
     "prod": "$npm_execpath run webpack -- --env.mode production",
-    "start": "concurrently \"$npm_execpath run dev:server -- --env.presets postcss\" \"$npm_execpath run storybook\"",
+    "start": "$npm_execpath run dev:server --env.presets postcss",
+    "startx": "$npm_execpath run dev:server -- --env.presets postcss",
+    "starty": "concurrently \"$npm_execpath run dev:server -- --env.presets postcss\" \"$npm_execpath run storybook\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "$npm_execpath run jest",
+    "test:watch": "$npm_execpath run jest --watch",
+    "test:update": "$npm_execpath run jest:update",
     "webpack:server": "webpack-dev-server --hot",
     "webpack": "webpack"
   },

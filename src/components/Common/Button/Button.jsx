@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = props => {
-  const { text, type } = props;
-
+const Button = ({ text, type, onClick }) => {
   switch (type) {
     case 'reset':
       return (
@@ -11,18 +9,20 @@ const Button = props => {
           type="reset"
           className="app-btn app-btn--cancel"
           value="Cancel"
+          onClick={onClick}
         />
       );
+
     case 'submit':
       return (
-        <button type="submit" className="app-btn app-btn--submit">
+        <button type="submit" className="app-btn app-btn--submit" onClick={onClick}>
           Submit
         </button>
       );
 
     default:
       return (
-        <button className="app-btn" type="button">
+        <button className="app-btn" type="button" onClick={onClick}>
           {text}
         </button>
       );
@@ -31,12 +31,12 @@ const Button = props => {
 
 Button.propTypes = {
   text: PropTypes.string,
-  btnType: PropTypes.oneOf(['reset', 'submit', 'button'])
+  type: PropTypes.oneOf(['reset', 'submit', 'button'])
 };
 
 Button.defaultProps = {
-  text: 'I\'m a button',
-  btnType: 'button'
+  text: 'Submit',
+  type: 'button'
 };
 
 export default Button;
