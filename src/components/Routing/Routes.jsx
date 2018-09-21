@@ -4,7 +4,7 @@ import importedComponent from 'react-imported-component';
 
 import Title from '../Common/Title/Title';
 import Loader from '../Common/Loader/Loader';
-import Home from '../Home/Home';
+import Home from '../Home/HomeController';
 
 const About = importedComponent(() => import('../About/About'), {
   LoadingComponent: () => <Loader />,
@@ -13,13 +13,13 @@ const About = importedComponent(() => import('../About/About'), {
       ERROR
     </div>
   )
-})
+});
 
 About.preload();
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/" component={() => <Home />} />
+    <Route exact path="/" component={Home} />
     <Route path="/about" component={() => <About />} />
     <Route path="/settings" component={() => <Title text="Settings" />} />
   </Switch>

@@ -6,6 +6,7 @@ A template for new projects with the basic setup and examples.
 
 - [Installation](#installation)
 - [About the boilerplate](#about-the-project)
+- [Controller Components](#controller-components)
 - [Commiting](#commiting-your-code)
 - [Contributing](#contributing)
 
@@ -38,6 +39,7 @@ What is included in the project:
 - [PostCSS](#postcss)
 - [Lazy Loading Components](#lazy-loading-components)
 - [Storybook](#storybook)
+- [Redux](#redux)
 
 ## Webpack
 Webpack's default config is set in the `webpack.config.js` file in the project root.
@@ -210,6 +212,32 @@ Similarly to testing your component, if it has a *storybook* example of its vari
 By creating a `_story.jsx` file in your **component** folder and writting a brief explanation of how to use said component, you might notice that you maybe wrote your component too complex and in the process simplify it.
 
 <hr />
+
+## Redux
+
+Following ESLint's recommendations, when connecting a component with Redux i.e. state, create a *Connector* for your component.
+
+```js
+import MyComponent from './MyComponent';
+
+const mapStateToProps = state => ({ ... })
+const mapDispatchToProps = dispatch => ({ ... })
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyComponent);
+```
+
+You can find a full example of the code in [ExampleConnector.js](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/src/components/REDUX_EXAMPLE_COMP/ExampleConnector.js)
+
+Now when you import your component, you call it via the **Connector** file, since all the connector does, is wrap your component in redux and pass it along.
+
+## Controller Components
+
+In order to have a more readable, cleaner code, split your components into *smart* and *dumb* components.
+
+A smart component, handles data and then passes it to its **view** component. When rendering the component, you need to call the **Controller** component.
 
 ## Commiting your code
 
