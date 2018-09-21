@@ -239,6 +239,36 @@ In order to have a more readable, cleaner code, split your components into *smar
 
 A smart component, handles data and then passes it to its **view** component. When rendering the component, you need to call the **Controller** component.
 
+An example of this component can be seen in [`HomeController.jsx`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/src/components/Home/HomeController.jsx).
+
+The Controller Component:
+
+```js
+import Home from './Home';
+
+class HomeController extends Component {
+  state = {...}
+
+  handleData = data => {...}
+
+  render() {
+    return <Home data={myData} onClick={handleData} />
+  }
+}
+
+export default HomeController;
+```
+
+Rendering Home:
+
+```js
+import Home from './Home/HomeController';
+
+...
+
+<Route exact path="/" component={Home} />
+```
+
 ## Commiting your code
 
 When you `git commit` files to your repository, `husky` will run its `precommit` script which will in turn, run the following scripts from the `package.json`:
