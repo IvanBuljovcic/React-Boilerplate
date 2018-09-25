@@ -192,7 +192,7 @@ Each type of variable has its own **YAML** file. The only caveat with this set-u
 
 Here's an example of using some variables:
 
-```postcss
+```css
 .my-awesome-class-name {
   background-color: map(colors, default, base);
 
