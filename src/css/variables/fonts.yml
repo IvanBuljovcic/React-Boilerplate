@@ -1,0 +1,23 @@
+
+# Fonts
+# -----
+## .element {
+##    font-weight: map(fonts, weight, normal);
+## }
+## ===
+## .element {
+##    font-weight: 400;
+## }
+
+base:
+    font-family: '"Roboto", sans-serif'
+    font-weight: 400
+
+weight:
+    light: 300
+    normal: 400
+    bold: 700
+
+size:
+    default: 10px
+    title: 22px

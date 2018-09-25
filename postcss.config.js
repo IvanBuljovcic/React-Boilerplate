@@ -1,5 +1,5 @@
-const sortingConfig = require('./.postcss-sorting.json');
 const path = require('path');
+const sortingConfig = require('./.postcss-sorting.json');
 
 module.exports = {
   plugins: {
@@ -8,10 +8,10 @@ module.exports = {
       basePath: './src/css/variables',
       maps: [
         'colors.yml',
-        'media.yml',
-        'zindex.yml',
+        'dimensions.yml',
         'fonts.yml',
-        'dimensions.yml'
+        'media.yml',
+        'zindex.yml'
       ]
     },
     'postcss-nested': {},
