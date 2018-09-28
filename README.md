@@ -133,7 +133,7 @@ Disabled options from AirBnB:
 - Import No Unresolved
 - Jest Lowercase Name
 - No Underscore Dangle
-- No `var`
+- No var
 - React Require Extension
 - React JSX One Expression Per Line
 - React JSX Wrap Multilines

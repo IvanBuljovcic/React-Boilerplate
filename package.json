@@ -1,9 +1,13 @@
 {
-  "author": "Andrija Vujovic <andrija.vujovic@roundglobe.tech>",
+  "author": "Ivan Buljovcic <ivan.buljovcic@gmail.com>",
   "contributors": [
     {
-      "email": "ivan.buljovcic@roundglobe.tech",
-      "name": "Ivan Buljovcic"
+      "email": "andrija.vujovic@roundglobe.tech",
+      "name": "Andrija Vujovic"
+    },
+    {
+      "email": "nikola.lakovic@roundglobe.tech",
+      "name": "Nikola Lakovic"
     },
     {
       "email": "stefan.karan@roundglobe.tech",
