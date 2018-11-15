@@ -1,20 +1,67 @@
-import exampleActions from '../actionTypes/exampleTypes';
+import axios from 'axios';
 
-function exampleActionOne(items) {
+// - Action Types
+import EXAMPLE_ACTIONS from '../actionTypes/exampleTypes';
+
+/** Loading
+ * 
+ * @param {boolean} bool 
+ */
+function exampleIsLoading(bool) {
   return {
-    type: exampleActions.FIRST,
-    payload: items
+    type: EXAMPLE_ACTIONS.EXAMPLE_IS_LOADING,
+    payload: bool
   }
 }
 
-function exampleActionTwo() {
+/** Errored
+ * 
+ * @param {boolean} bool 
+ */
+function exampleError(bool) {
   return {
-    type: exampleActions.SECOND,
-    payload: ['a', 'b', 'c']
+    type: EXAMPLE_ACTIONS.EXAMPLE_ERROR,
+    payload: bool
   }
 }
 
-export {
-  exampleActionOne,
-  exampleActionTwo
-};
+/** Error Data
+ * 
+ * @param {Object} data 
+ */
+function exampleErrorData(data) {
+  return {
+    type: EXAMPLE_ACTIONS.EXAMPLE_ERROR_DATA,
+    payload: data
+  }
+}
+
+/** Success
+ * 
+ * @param {Object} data 
+ */
+function exampleSuccess(data) {
+  return {
+    type: EXAMPLE_ACTIONS.EXAMPLE_SUCCESS,
+    payload: data
+  }
+}
+
+function exampleMainAction(axiosURL) {
+  return dispatch => {
+    dispatch(exampleIsLoading(true));
+
+    axios.get(axiosURL)
+      .then(response => {
+        dispatch(exampleIsLoading(false));
+        dispatch(exampleSuccess(response.data));
+      })
+      .catch(error => {
+        dispatch(exampleIsLoading(false));
+        dispatch(exampleError(true));
+        dispatch(exampleErrorData(error));
+      })
+  }
+}
+
+export default exampleMainAction;

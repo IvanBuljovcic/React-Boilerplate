@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
 
 // - Redux | Actions
-import { exampleActionOne } from '../../redux/actionCreators/exampleActions';
+import exampleMainAction from '../../redux/actionCreators/exampleActions';
 
 // - Connected Component
 import Example from './Example';
 
-
 const mapStateToProps = state => ({
-  items: state.items
+  exampleError: state.example.error,
+  exampleErrorData: state.example.errorData,
+  exampleData: state.example.data,
+  exampleLoading: state.example.loading
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleClick: items => dispatch(exampleActionOne(items))
+  handleClick: items => dispatch(exampleMainAction(items))
 });
 
 export default connect(

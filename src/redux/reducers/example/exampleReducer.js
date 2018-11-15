@@ -1,30 +1,70 @@
-import exampleTypes from '../../actionTypes/exampleTypes';
-import utils from '../../utils';
+import EXAMPLE_ACTIONS from '../../actionTypes/exampleTypes';
 
 const initialState = {
-  items: []
+  error: false,
+  errorData: null,
+  loading: false,
+  data: null
 }
 
-function firstExampleReducer(state, action) {
-  if (action.type === exampleTypes.FIRST) {
-    return utils.updateObject(state, action.payload);
+function exampleLoading(state, action) {
+  if (action.type === EXAMPLE_ACTIONS.EXAMPLE_IS_LOADING) {
+    return {
+      ...state,
+      loading: action.payload
+    }
   }
 
   return state;
 }
 
-function secondExampleReducer(state, action) {
-  return utils.updateObject(state, {
-    items: action.payload
-  })
+function exampleError(state, action) {
+  if (action.type === EXAMPLE_ACTIONS.EXAMPLE_ERROR) {
+    return {
+      ...state,
+      error: action.payload
+    }
+  }
+
+  return state;
+}
+
+function exampleErrorData(state, action) {
+  if (action.type === EXAMPLE_ACTIONS.EXAMPLE_ERROR_DATA) {
+    return {
+      ...state,
+      errorData: action.payload
+    }
+  }
+
+  return state;
+}
+
+function exampleSuccess(state, action) {
+  if (action.type === EXAMPLE_ACTIONS.EXAMPLE_SUCCESS) {
+    return {
+      ...state,
+      data: action.payload
+    }
+  }
+
+  return state;
 }
 
 const exampleReducer = (state = initialState, action) => {
   switch (action.type) {
-    case exampleTypes.FIRST:
-      return firstExampleReducer(state, action)
-    case exampleTypes.SECOND:
-      return secondExampleReducer(state, action)
+    case EXAMPLE_ACTIONS.EXAMPLE_ERROR:
+      return exampleError(state, action);
+
+    case EXAMPLE_ACTIONS.EXAMPLE_ERROR_DATA:
+      return exampleErrorData(state, action);
+
+    case EXAMPLE_ACTIONS.EXAMPLE_IS_LOADING:
+      return exampleLoading(state, action);
+
+    case EXAMPLE_ACTIONS.EXAMPLE_SUCCESS:
+      return exampleSuccess(state, action);
+
     default:
       return state;
   }

@@ -65,7 +65,10 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
     ],
     
     resolve: {
-      extensions: ['.js', '.jsx', '.json']
+      extensions: ['.js', '.jsx', '.json'],
+      alias: {
+        'config': path.resolve(__dirname, 'config', mode, 'config.js')
+      }
     }
 	},
 	modeConfig({ mode, presets }),

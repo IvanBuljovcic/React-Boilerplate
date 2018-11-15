@@ -1,8 +1,8 @@
-import keyMirror from 'key-mirror';
+const ACTIONS = {
+  EXAMPLE_ERROR: 'EXAMPLE_ERROR',
+  EXAMPLE_ERROR_DATA: 'EXAMPLE_ERROR_DATA',
+  EXAMPLE_IS_LOADING: 'EXAMPLE_IS_LOADING',
+  EXAMPLE_SUCCESS: 'EXAMPLE_SUCCESS'
+}
 
-const exampleActions = keyMirror({
-  FIRST: null,
-  SECOND: null
-})
-
-export default exampleActions;
+export default ACTIONS;

@@ -1,19 +1,19 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
+
+// - Default Styles
+import '../css/main.css';
 
 // - Root Components
 import Header from './Header/Header';
 import Routes from './Routing/Routes';
 
 const ClientApp = () => (
-  <BrowserRouter>
-    <React.Fragment>
-      <Header />
+  <React.Fragment>
+    <Header />
 
-      <Routes />
-    </React.Fragment>
-  </BrowserRouter>
+    <Routes />
+  </React.Fragment>
 );
 
 export default hot(module)(ClientApp);
