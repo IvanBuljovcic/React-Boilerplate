@@ -14,7 +14,11 @@ module.exports = () => ({
 				use: [ 'style-loader', 'css-loader', 'resolve-url-loader' ]
 			}
 		]
-	},
+  },
+  
+  output: {
+    publicPath: '/'
+  },
 
 	optimization: {
 		namedModules: true

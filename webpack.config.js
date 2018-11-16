@@ -4,6 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 /**
  * --- Configuration via the ENV objecct
@@ -20,11 +21,11 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 	return webpackMerge({
 		context: __dirname,
 		mode: mode,
-    entry: path.join(__dirname, 'src', 'index.jsx'),
+    entry: path.resolve(__dirname, 'src', 'index.jsx'),
 
 		output: {
 			filename: 'bundle.js',
-      path: path.join(__dirname, 'dist')
+      path: path.resolve(__dirname, 'dist')
 		},
 
 		module: {
@@ -60,8 +61,14 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 		plugins: [
 			new webpack.ProgressPlugin(),
 			new HTMLWebpackPlugin({
-				template: path.join(__dirname, 'index.html')
-			})
+				template: path.resolve(__dirname, 'index.html')
+      }),
+      new CopyWebpackPlugin(
+        [{
+          from: 'src/assets',
+          to: 'assets'
+        }]
+      )
     ],
     
     resolve: {

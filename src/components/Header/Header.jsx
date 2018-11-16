@@ -18,6 +18,9 @@ const Header = () => (
     <NavLink to="/example" activeClassName="active">
       Example
     </NavLink>
+    <NavLink to="/auth" activeClassName="active">
+      Auth
+    </NavLink>
   </header>
 )
 
