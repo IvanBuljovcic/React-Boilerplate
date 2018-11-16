@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 /**
  * --- Configuration via the ENV objecct
@@ -59,6 +60,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
 		},
 
 		plugins: [
+      new DashboardPlugin(),
 			new webpack.ProgressPlugin(),
 			new HTMLWebpackPlugin({
 				template: path.resolve(__dirname, 'index.html')
