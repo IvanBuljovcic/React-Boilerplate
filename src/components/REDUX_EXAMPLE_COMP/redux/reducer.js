@@ -1,4 +1,4 @@
-import EXAMPLE_ACTIONS from '../../actionTypes/exampleTypes';
+import EXAMPLE_ACTIONS from './actionTypes';
 
 const initialState = {
   error: false,

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // - Action Types
-import EXAMPLE_ACTIONS from '../actionTypes/exampleTypes';
+import EXAMPLE_ACTIONS from './actionTypes';
 
 /** Loading
  * 
