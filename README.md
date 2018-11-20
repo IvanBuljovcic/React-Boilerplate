@@ -329,7 +329,10 @@ If either script fails, you **need to fix** the errors. Only then will you be al
 While everyone who is a developer can add to this repository, before making changes, consult with the rest of the users of the project.
 
 ## Authors
-
+Ivan Buljovčić:
+  - <ivan.buljovcic@gmail.com>
+  - [LinkedIn](https://www.linkedin.com/in/ivan-buljov%C4%8Di%C4%87-898b5b53/)
+  - [GitHub](https://github.com/IvanBuljovcic)
 
 [modes]: #modes
 [dev]: #development
