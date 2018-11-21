@@ -48,7 +48,7 @@ What is included in the project:
 Webpack's default config is set in the `webpack.config.js` file in the project root.
 It uses loaders to handle specific file types.
 
-The entry point of the application is [`<ROOT_DIR>/src/index.jsx`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/src/index.jsx).
+The entry point of the application is [`<ROOT_DIR>/src/index.jsx`][index].
 
 For development puposes, `webpack-dev-server` has been set-up. It starts by default when you run the `start` script
 
@@ -61,12 +61,12 @@ Both these modes do some things specific to their purpose.
 
 Modes are used via the `webpack` script, by passing a `--env.mode` argument.
 
-`yarn run webpack --env.mode development` will call the [`<ROOT_DIR>/build-utils/webpack.development.js`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/webpack.development.js) file i.e. the development mode.
+`yarn run webpack --env.mode development` will call the [`<ROOT_DIR>/build-utils/webpack.development.js`][build-util-dev] file i.e. the development mode.
 
 Modes (link to file):
 
-- [Development](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/webpack.development.js)
-- [Production](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/webpack.production.js)
+- [Development][build-util-dev]
+- [Production][build-util-prod]
 
 ### Development
 
@@ -83,7 +83,7 @@ The files follow the `[name].[chunkhash].js` pattern. Namely, if you only have m
 
 Presets are small config files, that **must** follow a naming pattern in order to be loaded, the pattern being `webpack.[presetName].js`, and they must be placed into the `presets` folder.
 
-The presets are loaded via the [`<ROOT_DIR>/build-utils/loadPresets.js`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/loadPresets.js) file.
+The presets are loaded via the [`<ROOT_DIR>/build-utils/loadPresets.js`][build-util-presets] file.
 
 A preset should be as simple as calling the `eslint-loader` with its options if needed.
 It is then injected into the `webpack.config.js` when webpack starts.
@@ -102,10 +102,10 @@ yarn run webpack --env.presets eslint
 
 List of presets (link to file):
 
-- [Analyze](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/presets/webpack.analyze.js)
-- [Compress](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/presets/webpack.compress.js)
-- [Eslint](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/presets/webpack.eslint.js)
-- [Postcss](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/presets/webpack.postcss.js)
+- [Analyze][build-util-analyze]
+- [Compress][build-util-compress]
+- [Eslint][build-util-eslint]
+- [Postcss][build-util-postcss]
 
 ## Production Server
 
@@ -117,13 +117,13 @@ We run this server via the script
 
 `yarn run prod:server`
 
-It will run the `build` script and run the [`<ROOT_DIR>/build-utils/distServer.js`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/build-utils/distServer.js) file.
+It will run the `build` script and run the [`<ROOT_DIR>/build-utils/distServer.js`][dist-server] file.
 
 ## ES Lint
 
 ES Lint uses [AirBnB](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)'s default config, with some modifications.
 
-Config file is: [`<ROOT_DIR>/.eslintrc.json`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/.eslintrc.json)
+Config file is: [`<ROOT_DIR>/.eslintrc.json`][eslintrc]
 
 Disabled options from AirBnB:
 
@@ -175,7 +175,7 @@ For Unit tests, check out Enzyme and Jest's own documentation for a detailed ove
 
 This project uses the **postcss** syntax. This means that styles are written in `.css` files but you can **nest** your rules, use the **&** operator and most all of `sass` / `scss` syntax.
 
-The config file is: [`<ROOT_DIR>/postcss.config.js`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/postcss.config.js)
+The config file is: [`<ROOT_DIR>/postcss.config.js`][postcss-config]
 
 Every component should have it's specific style file **inside** it's folder i.e. 
 
@@ -186,7 +186,7 @@ Every component should have it's specific style file **inside** it's folder i.e.
 
 ### Variables
 
-Variables are stored in [`<ROOT_DIR>/src/css/variables`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/tree/develop/src/css/variables) folder.
+Variables are stored in [`<ROOT_DIR>/src/css/variables`][css-variables] folder.
 
 Each type of variable has its own **YAML** file. The only caveat with this set-up is, **when you edit a variable `*.yml` file, you must restart the `webpack-dev-server`**, because these files are loaded directly into webpack, not via a *css* file.
 
@@ -200,7 +200,7 @@ Here's an example of using some variables:
 }
 ```
 
-In the above example, when using the *map()* function, the first argument is the **filename**. This is set beforehand in the [`postcss.config.js`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/postcss.config.js). Namely, the *maps* array.
+In the above example, when using the *map()* function, the first argument is the **filename**. This is set beforehand in the [`postcss.config.js`][postcss-config]. Namely, the *maps* array.
 
 ```js
 maps: [
@@ -233,7 +233,7 @@ By splitting components that are not essential on the initial render into lazy-l
 
 To accomplish this, we use `react-imported-component`.
 
-You can find an example of this in [`<ROOT_DIR>/src/components/Routing/Routes.jsx`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/src/components/Routing/Routes.jsx), where the `<About />` component is being lazy-loaded.
+You can find an example of this in [`<ROOT_DIR>/src/components/Routing/Routes.jsx`][routing], where the `<About />` component is being lazy-loaded.
 
 `const About = importedComponent(() => import('../About/About')), {...})`
 
@@ -271,7 +271,7 @@ export default connect(
 )(MyComponent);
 ```
 
-You can find a full example of the code in [ExampleConnector.js](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/src/components/REDUX_EXAMPLE_COMP/ExampleConnector.js)
+You can find a full example of the code in [ExampleConnector.js][connector]
 
 Now when you import your component, you call it via the **Connector** file, since all the connector does, is wrap your component in redux and pass it along.
 
@@ -281,7 +281,7 @@ In order to have a more readable, cleaner code, split your components into *smar
 
 A smart component, handles data and then passes it to its **view** component. When rendering the component, you need to call the **Controller** component.
 
-An example of this component can be seen in [`HomeController.jsx`](https://gitlab.internal.roundglobe.tech/andrija/react-boilerplate/blob/develop/src/components/Home/HomeController.jsx).
+An example of this component can be seen in [`HomeController.jsx`][controller].
 
 The Controller Component:
 
@@ -337,3 +337,23 @@ Ivan Buljovčić:
 [modes]: #modes
 [dev]: #development
 [prod]: #production
+
+[index]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/src/index.jsx
+[build-util-dev]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/build-utils/webpack.development.js
+[build-util-prod]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/build-utils/webpack.production.js
+[build-util-presets]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/build-utils/loadPresets.js
+[build-util-analyze]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/build-utils/presets/webpack.analyze.js
+[build-util-compress]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/build-utils/presets/webpack.compress.js
+[build-util-eslint]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/build-utils/presets/webpack.eslint.js
+[build-util-postcss]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/build-utils/presets/webpack.postcss.js
+
+[dist-server]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/build-utils/distServer.js
+[eslintrc]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/.eslintrc.json
+[postcss-config]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/postcss.config.js
+
+[css-variables]: https://github.com/IvanBuljovcic/React-Boilerplate/tree/master/src/css/variables
+
+[routing]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/src/components/Routing/Routes.jsx
+
+[connector]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/src/components/REDUX_EXAMPLE_COMP/ExampleConnector.js
+[controller]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/src/components/Home/HomeController.jsx
