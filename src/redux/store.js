@@ -24,7 +24,7 @@ function configureStore(preloadedState) {
    * Use DevTools if set to `true` in config
    */
   let composedEnhancers;
-  if (config.USE_DEV_TOOLS_EXTENSION) {
+  if (config.USE_DEV_TOOL_EXTENSION) {
     composedEnhancers = composeWithDevTools(...enhancers);
   } else {
     composedEnhancers = compose(...enhancers);
