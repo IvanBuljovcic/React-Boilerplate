@@ -2,36 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Example = ({
-  exampleError,
-  exampleErrorData,
-  exampleData,
-  exampleLoading
+  error,
+  errorData,
+  data,
+  loading,
+  clickHandler
 }) => (
   <div>
     <pre>
       <h1>Example stuff</h1>
 
-      <pre>{exampleError}</pre>
-      <pre>{exampleErrorData}</pre>
-      <pre>{exampleData}</pre>
-      <pre>{exampleLoading}</pre>
+      <pre>Error: {`${error}`}</pre>
+      <pre>Error Data: {`${errorData}`}</pre>
+      <pre>Data: {`${data}`}</pre>
+      <pre>Loading: {`${loading}`}</pre>
+
+      <button type="button" onClick={() => clickHandler('Hello World')}>CLICK ME</button>
     </pre>
   </div>
 );
 
 /* eslint-disable react/forbid-prop-types */
 Example.propTypes = {
-  exampleError: PropTypes.bool,
-  exampleErrorData: PropTypes.object,
-  exampleData: PropTypes.object,
-  exampleLoading: PropTypes.bool
+  error: PropTypes.bool,
+  errorData: PropTypes.object,
+  data: PropTypes.object,
+  loading: PropTypes.bool,
+  clickHandler: PropTypes.func
 };
 
 Example.defaultProps = {
-  exampleError: false,
-  exampleErrorData: null,
-  exampleData: null,
-  exampleLoading: false
+  error: false,
+  errorData: null,
+  data: null,
+  loading: false,
+  clickHandler: () => {}
 };
 
 export default Example;

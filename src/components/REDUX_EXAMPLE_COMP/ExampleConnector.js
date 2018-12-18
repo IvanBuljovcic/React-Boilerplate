@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
 // - Redux | Actions
-import exampleMainAction from '../../redux/actionCreators/exampleActions';
+import exampleMainAction from './redux/actionCreators';
 
 // - Connected Component
-import Example from './Example';
+import Example from './ExampleController';
 
 const mapStateToProps = state => ({
   exampleError: state.example.error,

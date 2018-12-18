@@ -7,6 +7,7 @@ import Loader from '../Common/Loader/Loader';
 import Home from '../Home/HomeController';
 import ProtectedRoute from './Protected';
 import Auth from '../Pages/Auth/Auth';
+import Example from '../REDUX_EXAMPLE_COMP/ExampleController';
 
 const About = importedComponent(() => import('../About/About'), {
   LoadingComponent: () => <Loader />,
@@ -17,11 +18,6 @@ const About = importedComponent(() => import('../About/About'), {
   )
 });
 
-const Example = importedComponent(() => import('../REDUX_EXAMPLE_COMP/Example'), {
-  LoadingComponent: () => <Loader />,
-  ErrorComponent: <h1>ITS AN ERROR, FUCK!</h1>
-})
-
 About.preload();
 
 const Routes = () => (
@@ -29,7 +25,7 @@ const Routes = () => (
     <Route exact path="/" component={Home} />
     <Route path="/about" component={() => <About />} />
     <Route path="/settings" component={() => <Title text="Settings" />} />
-    <Route path="/example" component={() => <Example />} />
+    <Route path="/example" component={Example} />
 
     <ProtectedRoute
       path="/auth"

@@ -132,47 +132,36 @@
   "repository": "git@github.com:IvanBuljovcic/React-Boilerplate.git",
   "scripts": {
     "build-storybook": "build-storybook",
-    "build": "$npm_execpath run clean && $npm_execpath run prettier:write && $npm_execpath run prod",
+    "build": "yarn run clean && yarn run prettier:write && yarn run prod",
     "clean": "rimraf ./dist/**/*",
-
-    "debug:dev": "$npm_execpath run debug --env.mode development",
-    "debug:prod": "$npm_execpath run debug --env.mode production",
+    "debug:dev": "yarn run debug --env.mode development",
+    "debug:prod": "yarn run debug --env.mode production",
     "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
-
-    "dev:bundle": "$npm_execpath run dev:postcss",
-    "dev:lint": "$npm_execpath run dev --env.presets eslint",
-    "dev:server": "$npm_execpath run webpack:server --env.mode development --env.presets eslint",
-    "dev:watch": "$npm_execpath run dev --watch",
-    "dev": "$npm_execpath run webpack --env.mode development --env.presets postcss",
-
+    "dev:bundle": "yarn run dev:postcss",
+    "dev:lint": "yarn run dev --env.presets eslint",
+    "dev:server": "yarn run webpack:server --env.mode development --env.presets eslint",
+    "dev:watch": "yarn run dev --watch",
+    "dev": "yarn run webpack --env.mode development --env.presets postcss",
     "eslint": "eslint -c ./.eslintrc.json \"./src/**/*.{js,jsx}\"",
-    
-    "jest:update": "$npm_execpath run jest --updateSnapshot",
-    "jest:watch": "$npm_execpath run jest --watch",
+    "jest:update": "yarn run jest --updateSnapshot",
+    "jest:watch": "yarn run jest --watch",
     "jest": "jest --config=jest.config.js",
-
     "lint-staged": "lint-staged",
     "open:dist": "babel-node build-utils/distServer.js",
-    "precommit": "lint-staged && $npm_execpath run test",
-
-    "prettier:show": "$npm_execpath prettier --config ./prettier.config.json \"src/**/*.{js,jsx,ts,css,scss,less}\"",
-    "prettier:write": "$npm_execpath prettier --config ./prettier.config.json --write \"src/**/*.{js,jsx,ts,css,scss,less}\"",
+    "precommit": "lint-staged && yarn run test",
+    "prettier:show": "yarn prettier --config ./prettier.config.json \"src/**/*.{js,jsx,ts,css,scss,less}\"",
+    "prettier:write": "yarn prettier --config ./prettier.config.json --write \"src/**/*.{js,jsx,ts,css,scss,less}\"",
     "prettier": "prettier",
-
-    "prod:analyze": "$npm_execpath run prod --env.presets analyze",
-    "prod:compress": "$npm_execpath run prod --env.presets compress",
-    "prod:server": "$npm_execpath run build && $npm_execpath run open:dist",
-    "prod": "$npm_execpath run webpack --env.mode production --env.presets postcss",
-
-    "start": "$npm_execpath run dev:server --env.presets postcss",
-    "start:storybook": "concurrently \"$npm_execpath run dev:server --env.presets postcss\" \"$npm_execpath run storybook\"",
-
+    "prod:analyze": "yarn run prod --env.presets analyze",
+    "prod:compress": "yarn run prod --env.presets compress",
+    "prod:server": "yarn run build && yarn run open:dist",
+    "prod": "yarn run webpack --env.mode production --env.presets postcss",
+    "start": "yarn run dev:server --env.presets postcss",
+    "start:storybook": "concurrently \"yarn run dev:server --env.presets postcss\" \"yarn run storybook\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
-
-    "test": "$npm_execpath run jest",
-    "test:watch": "$npm_execpath run jest --watch",
-    "test:update": "$npm_execpath run jest:update",
-
+    "test": "yarn run jest",
+    "test:watch": "yarn run jest --watch",
+    "test:update": "yarn run jest:update",
     "webpack:server": "webpack-dashboard -- webpack-dev-server --hot",
     "webpack": "webpack"
   },
