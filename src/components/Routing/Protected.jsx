@@ -1,23 +1,19 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
+// - Utils | Authentication
 import auth from '../../redux/middleware/auth';
 
-function pushToRoot() {
-  window.location = '/';
-}
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+  const renderRoute = props => {
+    if (auth.authenticate()) {
+      return <Component {...props} />;
+    }
 
-const ProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props => {
-      if (auth.authenticate()) {
-        return <Component {...props} />;
-      }
+    return <Redirect to="/" />;
+  };
 
-      return pushToRoot();
-    }}
-  />
-);
+  return <Route {...rest} render={props => renderRoute(props)} />;
+};
 
 export default ProtectedRoute;

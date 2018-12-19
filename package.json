@@ -16,13 +16,13 @@
   ],
   "dependencies": {
     "axios": "^0.18.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-loadable": "^5.5.0",
-    "react-redux": "^5.0.7",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
-    "redux": "^4.0.0"
+    "redux": "^4.0.1"
   },
   "description": "Boilerplate for starting new projects in React",
   "devDependencies": {
@@ -162,7 +162,8 @@
     "test": "yarn run jest",
     "test:watch": "yarn run jest --watch",
     "test:update": "yarn run jest:update",
-    "webpack:server": "webpack-dashboard -- webpack-dev-server --hot",
+    "webpack:dashboard": "webpack-dashboard -- webpack-dev-server --hot",
+    "webpack:server": "webpack-dev-server --hot",
     "webpack": "webpack"
   },
   "version": "1.0.0"

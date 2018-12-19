@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 
 // - Components
 import Button from '../Common/Button/Button';
-import Home from './Home';
+import Loader from '../Common/Loader/Loader';
 
+// - Assets
 import logo from '../../assets/images/react_logo.png';
+
+// - Lazy loaded components
+const Home = lazy(() => import('./Home'));
 
 class HomeController extends Component {
   state = {
@@ -30,12 +34,15 @@ class HomeController extends Component {
           onClick={this.handleClick}
           text="Show Home Page"
         />
-        <Home
-          display-if={showHome}
-          title="Home Page Title"
-          paragraph="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae aspernatur quo eaque cupiditate eligendi facere quasi commodi quas maiores, quam doloremque dignissimos asperiores accusantium nihil mollitia laudantium hic assumenda accusamus."
-          logo={logo}
-        />
+
+        <Suspense fallback={<Loader />}>
+          <Home
+            display-if={showHome}
+            title="Home Page Title"
+            paragraph="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae aspernatur quo eaque cupiditate eligendi facere quasi commodi quas maiores, quam doloremque dignissimos asperiores accusantium nihil mollitia laudantium hic assumenda accusamus."
+            logo={logo}
+          />
+        </Suspense>
       </React.Fragment>
     );
   }
