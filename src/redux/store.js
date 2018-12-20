@@ -14,9 +14,19 @@ import monitorReducersEnhancer from './enhancers/monitorReducer';
 
 
 function configureStore(preloadedState) {
+  /**
+   * Middlewares array
+   */
   const middlewares = [loggerMiddleware, routerMiddleware(history), thunk];
+
+  /**
+   * Apply middlewares from array
+   */
   const middlewareEnhancer = applyMiddleware(...middlewares);
 
+  /**
+   * Enhancers array
+   */
   const enhancers = [middlewareEnhancer, monitorReducersEnhancer]
 
   /**
@@ -30,7 +40,11 @@ function configureStore(preloadedState) {
     composedEnhancers = compose(...enhancers);
   }
 
-  const store = createStore(rootReducer, preloadedState, composedEnhancers);
+  const store = createStore(
+    rootReducer,
+    preloadedState,
+    composedEnhancers
+  );
 
   return store;
 }

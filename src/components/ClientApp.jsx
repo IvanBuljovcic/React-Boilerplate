@@ -1,5 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import config from 'config';
 
 // - Default Styles
 import '../css/main.css';
@@ -18,8 +19,10 @@ const ClientApp = () => (
 
     <Routes />
 
-    <button onClick={() => addToken()} type="button">ADD TOKEN</button>
+    <button onClick={() => addToken()} type="button">
+      ADD TOKEN
+    </button>
   </React.Fragment>
 );
 
-export default hot(module)(ClientApp);
+export default (config.HOT_MODULE_LOADER ? hot(module)(ClientApp) : ClientApp);
