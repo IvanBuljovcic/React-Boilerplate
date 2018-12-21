@@ -7,15 +7,11 @@ import Loader from '../Common/Loader/Loader';
 import Home from '../Home/HomeController';
 import ProtectedRoute from './Protected';
 import Auth from '../Pages/Auth/Auth';
-import Example from '../REDUX_EXAMPLE_COMP/ExampleController';
+import Example from '../REDUX_EXAMPLE_COMP';
 
 const About = importedComponent(() => import('../About/About'), {
   LoadingComponent: () => <Loader />,
-  ErrorComponent: () => (
-    <div>
-      ERROR
-    </div>
-  )
+  ErrorComponent: () => <div>ERROR</div>
 });
 
 About.preload();
@@ -27,10 +23,7 @@ const Routes = () => (
     <Route path="/settings" component={() => <Title text="Settings" />} />
     <Route path="/example" component={Example} />
 
-    <ProtectedRoute
-      path="/auth"
-      component={Auth}
-    />
+    <ProtectedRoute path="/auth" component={Auth} />
   </Switch>
 );
 

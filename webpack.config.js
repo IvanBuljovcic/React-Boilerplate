@@ -6,6 +6,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 /**
  * --- Configuration via the ENV objecct
@@ -70,13 +71,18 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
           from: 'src/assets',
           to: 'assets'
         }]
-      )
+      ),
+      new WebpackNotifierPlugin({
+        title: 'React-Boilerplate',
+        contentImage: path.resolve(__dirname, 'src', 'assets', 'images', 'react_logo.png')
+      })
     ],
     
     resolve: {
       extensions: ['.js', '.jsx', '.json'],
       alias: {
-        'config': path.resolve(__dirname, 'config', mode, 'config.js')
+        'config': path.resolve(__dirname, 'config', mode, 'config.js'),
+        'utils': path.resolve(__dirname, 'src', 'redux', 'utils')
       }
     }
 	},

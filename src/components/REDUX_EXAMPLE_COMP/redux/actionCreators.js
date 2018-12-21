@@ -64,4 +64,10 @@ function exampleMainAction(axiosURL) {
   }
 }
 
-export default exampleMainAction;
+export {
+  exampleMainAction as default,
+  exampleIsLoading,
+  exampleError,
+  exampleErrorData,
+  exampleSuccess
+};

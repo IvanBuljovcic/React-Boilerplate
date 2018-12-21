@@ -1,8 +1,8 @@
 import React, { Component, lazy, Suspense } from 'react';
 
 // - Components
-import Button from '../Common/Button/Button';
-import Loader from '../Common/Loader/Loader';
+import Button from '../Common/Button';
+import Loader from '../Common/Loader';
 
 // - Assets
 import logo from '../../assets/images/react_logo.png';

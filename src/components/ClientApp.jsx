@@ -6,8 +6,8 @@ import config from 'config';
 import '../css/main.css';
 
 // - Root Components
-import Header from './Header/Header';
-import Routes from './Routing/Routes';
+import Header from './Header';
+import Routes from './Routing';
 
 function addToken() {
   localStorage.setItem('authToken', 'asdasdasd');
@@ -25,4 +25,8 @@ const ClientApp = () => (
   </React.Fragment>
 );
 
-export default (config.HOT_MODULE_LOADER ? hot(module)(ClientApp) : ClientApp);
+export default (
+  config.HOT_MODULE_LOADER ?
+    hot(module)(ClientApp) :
+    ClientApp
+);

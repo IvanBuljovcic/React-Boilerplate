@@ -231,8 +231,9 @@ For the most effective use of browser loading, http requests etc. we can split o
 
 By splitting components that are not essential on the initial render into lazy-loaded chunks, you are speeding up the load time of your application and providing a more enjoyable experience to the users.
 
-To accomplish this, we use `react-imported-component`.
+To accomplish this, we use either `react-imported-component` or a new feature that was introduced in React@16.6, `React.lazy(...)`.
 
+### React Imported Component
 You can find an example of this in [`<ROOT_DIR>/src/components/Routing/Routes.jsx`][routing], where the `<About />` component is being lazy-loaded.
 
 `const About = importedComponent(() => import('../About/About')), {...})`
@@ -248,6 +249,35 @@ const About = importedComponent(
   }
 );
 ```
+
+*NOTE: This method and dependency will be left in this boilerplate for now but it will be removed in future versions.*
+
+### React Lazy
+
+This is very similar to `react-imported-component`, but since it is a core component of React itself, you do not need to use a third party dependency to lazy load your components.
+
+```js
+import React, { lazy, Suspense } from 'react';
+import Loader from './Loader';
+
+const Home = lazy(() => import('./Home'));
+
+const App = () => (
+  <Router>
+    <Suspense fallback={<Loader />}>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Suspense>
+  </Router>
+)
+```
+
+This is mostly self explanatory. Every component you want to lazy-load, you wrap the `lazy()` function around it and import said component.
+
+One thing that is maybe not as self explanatory is the `Suspense` HOC.
+
+`<Suspense>` lets you specify the loading indicator in case the wrapped component is not yet ready to render.
 
 ## Storybook
 
@@ -271,7 +301,7 @@ export default connect(
 )(MyComponent);
 ```
 
-You can find a full example of the code in [ExampleConnector.js][connector]
+You can find a full example of the code in [index.js][connector]
 
 Now when you import your component, you call it via the **Connector** file, since all the connector does, is wrap your component in redux and pass it along.
 
@@ -355,5 +385,5 @@ Ivan Buljovčić:
 
 [routing]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/src/components/Routing/Routes.jsx
 
-[connector]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/src/components/REDUX_EXAMPLE_COMP/ExampleConnector.js
+[connector]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/src/components/REDUX_EXAMPLE_COMP/index.js
 [controller]: https://github.com/IvanBuljovcic/React-Boilerplate/blob/master/src/components/Home/HomeController.jsx

@@ -7,9 +7,9 @@ import exampleMainAction from './redux/actionCreators';
 import Example from './ExampleController';
 
 const mapStateToProps = state => ({
+  exampleData: state.example.data,
   exampleError: state.example.error,
   exampleErrorData: state.example.errorData,
-  exampleData: state.example.data,
   exampleLoading: state.example.loading
 });
 
