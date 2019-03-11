@@ -4,8 +4,8 @@ const applyPresets = (env = { presets: [] }) => {
 	const presets = env.presets || [];
 
 	/**
-	 * @type {string[]}
-	 */
+	* @type {string[]}
+	*/
 	const mergedPresets = [].concat(...[presets]);
 	const mergedConfigs = mergedPresets.map(
 		presetName => require(`./presets/webpack.${presetName}`)(env) // Call the preset and pass env also

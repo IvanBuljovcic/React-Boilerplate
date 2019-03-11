@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, number, boolean } from '@storybook/addon-knobs/react';
+import { withKnobs } from '@storybook/addon-knobs/react';
 import StoryRouter from 'storybook-react-router';
 
 // - Component

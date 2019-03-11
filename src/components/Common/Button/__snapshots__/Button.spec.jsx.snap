@@ -3,6 +3,7 @@
 exports[`<Button /> Snapshots Default button 1`] = `
 <button
   className="app-btn"
+  onClick={[Function]}
   type="button"
 >
   Submit
@@ -12,6 +13,7 @@ exports[`<Button /> Snapshots Default button 1`] = `
 exports[`<Button /> Snapshots Reset button 1`] = `
 <input
   className="app-btn app-btn--cancel"
+  onClick={[Function]}
   type="reset"
   value="Cancel"
 />
@@ -20,6 +22,7 @@ exports[`<Button /> Snapshots Reset button 1`] = `
 exports[`<Button /> Snapshots Submit button 1`] = `
 <button
   className="app-btn app-btn--submit"
+  onClick={[Function]}
   type="submit"
 >
   Submit

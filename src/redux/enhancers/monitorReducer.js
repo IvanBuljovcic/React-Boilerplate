@@ -1,6 +1,4 @@
 /* eslint no-console: ["error", { allow: ["group", "groupEnd", "info"] }] */
-
-
 const round = number => Math.round(number * 100) / 100
 
 const monitorReducerEnhancer = createStore => (

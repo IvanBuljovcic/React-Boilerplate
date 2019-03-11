@@ -34,6 +34,7 @@
     "transform-react-constant-elements",
     "syntax-dynamic-import",
     "react-imported-component/babel",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    "syntax-trailing-function-commas",
   ]
 }

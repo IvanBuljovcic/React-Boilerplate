@@ -31,12 +31,14 @@ const Button = ({ text, type, onClick }) => {
 
 Button.propTypes = {
   text: PropTypes.string,
-  type: PropTypes.oneOf(['reset', 'submit', 'button'])
+  type: PropTypes.oneOf(['reset', 'submit', 'button']),
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
   text: 'Submit',
-  type: 'button'
+  type: 'button',
+  onClick: () => {},
 };
 
 export default Button;
