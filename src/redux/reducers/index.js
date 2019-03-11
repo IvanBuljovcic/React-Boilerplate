@@ -7,7 +7,7 @@ import exampleReducer from '../../components/REDUX_EXAMPLE_COMP/redux/reducer';
 const rootReducer = combineReducers({
   example: exampleReducer,
 
-  routing: routerReducer
+  routing: routerReducer,
 });
 
 export default rootReducer;

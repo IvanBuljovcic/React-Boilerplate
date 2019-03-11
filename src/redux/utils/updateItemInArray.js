@@ -1,8 +1,8 @@
 /** UTILS | Update Item In Array
- * 
- * @param {[]} array 
- * @param {string|number} itemID 
- * @callback updateItemCallback 
+ *
+ * @param {[]} array
+ * @param {string|number} itemID
+ * @callback updateItemCallback
  */
 
 function updateItemInArray(array, itemID, updateItemCallback) {

@@ -1,7 +1,7 @@
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 import config from 'config';
 
 // - Redux history
@@ -11,7 +11,6 @@ import history from './history';
 import rootReducer from './reducers';
 import loggerMiddleware from './middleware/logger';
 import monitorReducersEnhancer from './enhancers/monitorReducer';
-
 
 function configureStore(preloadedState) {
   /**
@@ -27,7 +26,7 @@ function configureStore(preloadedState) {
   /**
    * Enhancers array
    */
-  const enhancers = [middlewareEnhancer, monitorReducersEnhancer]
+  const enhancers = [middlewareEnhancer, monitorReducersEnhancer];
 
   /**
    * Compose enhancers
@@ -40,14 +39,9 @@ function configureStore(preloadedState) {
     composedEnhancers = compose(...enhancers);
   }
 
-  const store = createStore(
-    rootReducer,
-    preloadedState,
-    composedEnhancers
-  );
+  const store = createStore(rootReducer, preloadedState, composedEnhancers);
 
   return store;
 }
-
 
 export default configureStore;

@@ -15,13 +15,13 @@ const Home = ({ title, paragraph, logo }) => (
 Home.propTypes = {
   logo: PropTypes.string,
   paragraph: PropTypes.string,
-  title: PropTypes.string
-}
+  title: PropTypes.string,
+};
 
 Home.defaultProps = {
   logo: null,
   paragraph: null,
-  title: null
-}
+  title: null,
+};
 
 export default Home;

@@ -12,7 +12,7 @@ const Home = lazy(() => import('./Home'));
 
 class HomeController extends Component {
   state = {
-    showHome: false
+    showHome: false,
   };
 
   handleClick = () => {
@@ -20,7 +20,7 @@ class HomeController extends Component {
     const newShow = !showHome;
 
     this.setState({
-      showHome: newShow
+      showHome: newShow,
     });
   };
 
@@ -29,11 +29,7 @@ class HomeController extends Component {
 
     return (
       <React.Fragment>
-        <Button
-          display-if={!showHome}
-          onClick={this.handleClick}
-          text="Show Home Page"
-        />
+        <Button display-if={!showHome} onClick={this.handleClick} text="Show Home Page" />
 
         <Suspense fallback={<Loader />}>
           <Home

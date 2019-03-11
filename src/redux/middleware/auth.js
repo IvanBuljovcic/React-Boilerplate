@@ -8,16 +8,16 @@ const auth = {
     const token = localStorage.getItem('authToken');
 
     if (token) {
-      return true
+      return true;
     }
-    
-    return false
+
+    return false;
   },
 
   signOut() {
     localStorage.removeItem('authToken');
     history.push('/');
-  }
-}
+  },
+};
 
 export default auth;

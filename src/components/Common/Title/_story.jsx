@@ -13,19 +13,20 @@ stories.addWithChapters('Title', {
         {
           title: 'Default',
           subtitle: `Default title, accepts a **text** prop`,
-          sectionFn: () => <Title text="Hello World" />
+          sectionFn: () => <Title text="Hello World" />,
         },
         {
           title: 'Subtitle',
           info: 'Subtitle title, accepts a **text** prop',
-          sectionFn: () => <Title text="Hello World Subtitle" isSubtitle />
+          sectionFn: () => <Title text="Hello World Subtitle" isSubtitle />,
         },
         {
           title: 'With Modifier',
-          info: 'Title with a class modifier. The modifier appends a class to the element with the **app-title--modifier** pattern',
-          sectionFn: () => <Title text="Hello World modified" classModifier="modifier" />
-        }
-      ]
-    }
-  ]
+          info:
+            'Title with a class modifier. The modifier appends a class to the element with the **app-title--modifier** pattern',
+          sectionFn: () => <Title text="Hello World modified" classModifier="modifier" />,
+        },
+      ],
+    },
+  ],
 });

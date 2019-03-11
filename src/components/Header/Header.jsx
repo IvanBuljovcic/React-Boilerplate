@@ -22,6 +22,6 @@ const Header = () => (
       Auth
     </NavLink>
   </header>
-)
+);
 
 export default Header;

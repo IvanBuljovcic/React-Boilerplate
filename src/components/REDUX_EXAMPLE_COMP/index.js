@@ -10,11 +10,11 @@ const mapStateToProps = state => ({
   exampleData: state.example.data,
   exampleError: state.example.error,
   exampleErrorData: state.example.errorData,
-  exampleLoading: state.example.loading
+  exampleLoading: state.example.loading,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleClick: items => dispatch(exampleMainAction(items))
+  handleClick: items => dispatch(exampleMainAction(items)),
 });
 
 export default connect(

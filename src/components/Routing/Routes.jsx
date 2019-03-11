@@ -11,7 +11,7 @@ import Example from '../REDUX_EXAMPLE_COMP';
 
 const About = importedComponent(() => import('../About/About'), {
   LoadingComponent: () => <Loader />,
-  ErrorComponent: () => <div>ERROR</div>
+  ErrorComponent: () => <div>ERROR</div>,
 });
 
 About.preload();

@@ -9,12 +9,7 @@ class ExampleController extends Component {
   handleClick = text => console.log(text);
 
   render() {
-    const {
-      exampleError,
-      exampleErrorData,
-      exampleData,
-      exampleLoading
-    } = this.props;
+    const { exampleError, exampleErrorData, exampleData, exampleLoading } = this.props;
 
     return (
       <ExampleView
@@ -33,14 +28,14 @@ ExampleController.propTypes = {
   exampleError: PropTypes.bool,
   exampleErrorData: PropTypes.object,
   exampleData: PropTypes.object,
-  exampleLoading: PropTypes.bool
+  exampleLoading: PropTypes.bool,
 };
 
 ExampleController.defaultProps = {
   exampleError: false,
   exampleErrorData: null,
   exampleData: null,
-  exampleLoading: false
+  exampleLoading: false,
 };
 
 export default ExampleController;

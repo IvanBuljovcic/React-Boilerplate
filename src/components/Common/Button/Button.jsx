@@ -4,14 +4,7 @@ import PropTypes from 'prop-types';
 const Button = ({ text, type, onClick }) => {
   switch (type) {
     case 'reset':
-      return (
-        <input
-          type="reset"
-          className="app-btn app-btn--cancel"
-          value="Cancel"
-          onClick={onClick}
-        />
-      );
+      return <input type="reset" className="app-btn app-btn--cancel" value="Cancel" onClick={onClick} />;
 
     case 'submit':
       return (

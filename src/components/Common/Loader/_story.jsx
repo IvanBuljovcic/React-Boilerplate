@@ -6,16 +6,15 @@ import Loader from './Loader';
 
 const stories = storiesOf('Common', module);
 
-
 stories.addWithChapters('Loader', {
-	chapters: [
-		{
-			sections: [
-				{
-					title: 'Default',
-					sectionFn: () => <Loader />
-				}
-			]
-		}
-	]
-})
+  chapters: [
+    {
+      sections: [
+        {
+          title: 'Default',
+          sectionFn: () => <Loader />,
+        },
+      ],
+    },
+  ],
+});

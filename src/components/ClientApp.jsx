@@ -25,8 +25,4 @@ const ClientApp = () => (
   </React.Fragment>
 );
 
-export default (
-  config.HOT_MODULE_LOADER ?
-    hot(module)(ClientApp) :
-    ClientApp
-);
+export default (config.HOT_MODULE_LOADER ? hot(module)(ClientApp) : ClientApp);

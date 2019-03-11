@@ -1,13 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Example = ({
-  error,
-  errorData,
-  data,
-  loading,
-  clickHandler
-}) => (
+const Example = ({ error, errorData, data, loading, clickHandler }) => (
   <div>
     <pre>
       <h1>Example stuff</h1>
@@ -17,7 +11,9 @@ const Example = ({
       <pre>Data: {`${data}`}</pre>
       <pre>Loading: {`${loading}`}</pre>
 
-      <button type="button" onClick={() => clickHandler('Hello World')}>CLICK ME</button>
+      <button type="button" onClick={() => clickHandler('Hello World')}>
+        CLICK ME
+      </button>
     </pre>
   </div>
 );
@@ -28,7 +24,7 @@ Example.propTypes = {
   errorData: PropTypes.object,
   data: PropTypes.object,
   loading: PropTypes.bool,
-  clickHandler: PropTypes.func
+  clickHandler: PropTypes.func,
 };
 
 Example.defaultProps = {
@@ -36,7 +32,7 @@ Example.defaultProps = {
   errorData: null,
   data: null,
   loading: false,
-  clickHandler: () => {}
+  clickHandler: () => {},
 };
 
 export default Example;

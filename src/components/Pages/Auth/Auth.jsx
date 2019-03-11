@@ -4,9 +4,8 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import auth from '../../../redux/middleware/auth';
 
-
 function removeToken() {
-  auth.signOut()
+  auth.signOut();
 }
 
 const Auth = ({ match }) => (
@@ -15,13 +14,15 @@ const Auth = ({ match }) => (
 
     <Link to={`${match.url}/people`}>Go To People</Link>
     <Link to={`${match.url}/animals`}>Go To Animals</Link>
-    
+
     <Switch>
       <Route path={`${match.url}/people`} component={() => <h1>Persons</h1>} />
       <Route path={`${match.url}/animals`} component={() => <h1>Animals</h1>} />
     </Switch>
 
-    <button onClick={() => removeToken()} type="button">REMOVE TOKEN</button>
+    <button onClick={() => removeToken()} type="button">
+      REMOVE TOKEN
+    </button>
   </React.Fragment>
 );
 

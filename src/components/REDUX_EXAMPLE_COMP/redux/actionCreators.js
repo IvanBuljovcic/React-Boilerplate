@@ -4,54 +4,55 @@ import axios from 'axios';
 import EXAMPLE_ACTIONS from './actionTypes';
 
 /** Loading
- * 
- * @param {boolean} bool 
+ *
+ * @param {boolean} bool
  */
 function exampleIsLoading(bool) {
   return {
     type: EXAMPLE_ACTIONS.EXAMPLE_IS_LOADING,
-    payload: bool
-  }
+    payload: bool,
+  };
 }
 
 /** Errored
- * 
- * @param {boolean} bool 
+ *
+ * @param {boolean} bool
  */
 function exampleError(bool) {
   return {
     type: EXAMPLE_ACTIONS.EXAMPLE_ERROR,
-    payload: bool
-  }
+    payload: bool,
+  };
 }
 
 /** Error Data
- * 
- * @param {Object} data 
+ *
+ * @param {Object} data
  */
 function exampleErrorData(data) {
   return {
     type: EXAMPLE_ACTIONS.EXAMPLE_ERROR_DATA,
-    payload: data
-  }
+    payload: data,
+  };
 }
 
 /** Success
- * 
- * @param {Object} data 
+ *
+ * @param {Object} data
  */
 function exampleSuccess(data) {
   return {
     type: EXAMPLE_ACTIONS.EXAMPLE_SUCCESS,
-    payload: data
-  }
+    payload: data,
+  };
 }
 
 function exampleMainAction(axiosURL) {
   return dispatch => {
     dispatch(exampleIsLoading(true));
 
-    axios.get(axiosURL)
+    axios
+      .get(axiosURL)
       .then(response => {
         dispatch(exampleIsLoading(false));
         dispatch(exampleSuccess(response.data));
@@ -60,14 +61,8 @@ function exampleMainAction(axiosURL) {
         dispatch(exampleIsLoading(false));
         dispatch(exampleError(true));
         dispatch(exampleErrorData(error));
-      })
-  }
+      });
+  };
 }
 
-export {
-  exampleMainAction as default,
-  exampleIsLoading,
-  exampleError,
-  exampleErrorData,
-  exampleSuccess
-};
+export { exampleMainAction as default, exampleIsLoading, exampleError, exampleErrorData, exampleSuccess };

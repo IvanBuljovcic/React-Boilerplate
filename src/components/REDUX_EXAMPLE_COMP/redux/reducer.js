@@ -4,15 +4,15 @@ const initialState = {
   error: false,
   errorData: null,
   loading: false,
-  data: null
-}
+  data: null,
+};
 
 function exampleLoading(state, action) {
   if (action.type === EXAMPLE_ACTIONS.EXAMPLE_IS_LOADING) {
     return {
       ...state,
-      loading: action.payload
-    }
+      loading: action.payload,
+    };
   }
 
   return state;
@@ -22,8 +22,8 @@ function exampleError(state, action) {
   if (action.type === EXAMPLE_ACTIONS.EXAMPLE_ERROR) {
     return {
       ...state,
-      error: action.payload
-    }
+      error: action.payload,
+    };
   }
 
   return state;
@@ -33,8 +33,8 @@ function exampleErrorData(state, action) {
   if (action.type === EXAMPLE_ACTIONS.EXAMPLE_ERROR_DATA) {
     return {
       ...state,
-      errorData: action.payload
-    }
+      errorData: action.payload,
+    };
   }
 
   return state;
@@ -44,8 +44,8 @@ function exampleSuccess(state, action) {
   if (action.type === EXAMPLE_ACTIONS.EXAMPLE_SUCCESS) {
     return {
       ...state,
-      data: action.payload
-    }
+      data: action.payload,
+    };
   }
 
   return state;
@@ -68,6 +68,6 @@ const exampleReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default exampleReducer;

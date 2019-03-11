@@ -1,8 +1,8 @@
 .app-title {
-  color: #CCC;
+  color: #ccc;
   font-size: 2.4rem;
 
   &--modifier {
-    color: #FA0;
+    color: #fa0;
   }
 }

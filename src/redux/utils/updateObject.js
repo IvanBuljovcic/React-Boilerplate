@@ -1,7 +1,7 @@
 /** UTILS | Update Object
- * 
- * @param {Object} object 
- * @param {string|string[]} newValues 
+ *
+ * @param {Object} object
+ * @param {string|string[]} newValues
  */
 
 function updateObject(object, newValues) {

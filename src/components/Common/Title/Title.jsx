@@ -25,13 +25,13 @@ const Title = ({ text, isSubtitle, classModifier }) => {
 Title.propTypes = {
   classModifier: PropTypes.string,
   text: PropTypes.string,
-  isSubtitle: PropTypes.bool
+  isSubtitle: PropTypes.bool,
 };
 
 Title.defaultProps = {
   classModifier: null,
   text: null,
-  isSubtitle: false
+  isSubtitle: false,
 };
 
 export default Title;

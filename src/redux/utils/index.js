@@ -3,7 +3,7 @@ import updateObject from './updateObject';
 
 const utils = {
   updateItemInArray,
-  updateObject
+  updateObject,
 };
 
 export default utils;
